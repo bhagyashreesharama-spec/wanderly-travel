@@ -33,9 +33,15 @@
             <a href="#booking">Contact</a>
         </nav>
 
-        <a href="#booking" class="nav-button">
-            Plan a Trip
-        </a>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="openAuth('login')">
+                Login
+            </button>
+
+            <button class="register-btn" onclick="openAuth('register')">
+                Register
+            </button>
+        </div>
 
     </header>
 
@@ -106,7 +112,6 @@
 
         <div class="destination-grid">
 
-            <!-- MANALI -->
             <article class="destination-card">
 
                 <img
@@ -116,13 +121,9 @@
 
                 <div class="destination-info">
 
-                    <span>
-                        HIMACHAL PRADESH
-                    </span>
+                    <span>HIMACHAL PRADESH</span>
 
-                    <h3>
-                        Manali
-                    </h3>
+                    <h3>Manali</h3>
 
                     <p>
                         Mountains, nature & peaceful escapes.
@@ -137,7 +138,6 @@
             </article>
 
 
-            <!-- GOA -->
             <article class="destination-card">
 
                 <img
@@ -147,13 +147,9 @@
 
                 <div class="destination-info">
 
-                    <span>
-                        GOA
-                    </span>
+                    <span>GOA</span>
 
-                    <h3>
-                        Goa
-                    </h3>
+                    <h3>Goa</h3>
 
                     <p>
                         Beaches, sunsets & good vibes.
@@ -168,23 +164,19 @@
             </article>
 
 
-            <!-- KASHMIR -->
+            <!-- KASHMIR - FIXED IMAGE -->
             <article class="destination-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=85"
-                    alt="Kashmir lake and mountains"
+                    src="https://images.unsplash.com/photo-1569852837213-00d97a707a83?auto=format&fit=crop&w=1000&q=85"
+                    alt="Dal Lake Srinagar Kashmir"
                 >
 
                 <div class="destination-info">
 
-                    <span>
-                        JAMMU & KASHMIR
-                    </span>
+                    <span>JAMMU & KASHMIR</span>
 
-                    <h3>
-                        Kashmir
-                    </h3>
+                    <h3>Kashmir</h3>
 
                     <p>
                         Lakes, mountains & peaceful views.
@@ -225,7 +217,6 @@
 
         <div class="trip-grid">
 
-            <!-- MANALI TRIP -->
             <article class="trip-card">
 
                 <div class="trip-image">
@@ -243,9 +234,7 @@
 
                 <div class="trip-content">
 
-                    <h3>
-                        Manali Escape
-                    </h3>
+                    <h3>Manali Escape</h3>
 
                     <p class="duration">
                         3 Days / 2 Nights
@@ -253,9 +242,7 @@
 
                     <div class="trip-bottom">
 
-                        <strong>
-                            ₹8,999
-                        </strong>
+                        <strong>₹8,999</strong>
 
                         <a href="#booking">
                             View Trip →
@@ -268,7 +255,6 @@
             </article>
 
 
-            <!-- GOA TRIP -->
             <article class="trip-card">
 
                 <div class="trip-image">
@@ -286,9 +272,7 @@
 
                 <div class="trip-content">
 
-                    <h3>
-                        Goa Getaway
-                    </h3>
+                    <h3>Goa Getaway</h3>
 
                     <p class="duration">
                         4 Days / 3 Nights
@@ -296,9 +280,7 @@
 
                     <div class="trip-bottom">
 
-                        <strong>
-                            ₹10,999
-                        </strong>
+                        <strong>₹10,999</strong>
 
                         <a href="#booking">
                             View Trip →
@@ -311,14 +293,13 @@
             </article>
 
 
-            <!-- KASHMIR TRIP -->
             <article class="trip-card">
 
                 <div class="trip-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1600684669144-24f3a4b1f8b5?auto=format&fit=crop&w=900&q=85"
-                        alt="Kashmir travel experience"
+                        src="https://images.unsplash.com/photo-1569852837213-00d97a707a83?auto=format&fit=crop&w=900&q=85"
+                        alt="Kashmir Dal Lake trip"
                     >
 
                     <span class="trip-tag">
@@ -329,9 +310,7 @@
 
                 <div class="trip-content">
 
-                    <h3>
-                        Kashmir Adventure
-                    </h3>
+                    <h3>Kashmir Adventure</h3>
 
                     <p class="duration">
                         5 Days / 4 Nights
@@ -339,9 +318,7 @@
 
                     <div class="trip-bottom">
 
-                        <strong>
-                            ₹14,999
-                        </strong>
+                        <strong>₹14,999</strong>
 
                         <a href="#booking">
                             View Trip →
@@ -388,7 +365,6 @@
                 experiences and unforgettable adventures.
             </p>
 
-
             <div class="about-stats">
 
                 <div>
@@ -430,13 +406,12 @@
                 Let's plan your next unforgettable journey.
             </p>
 
-            <a
-                href="mailto:hello@wanderly.demo"
-                class="primary-btn"
+            <button
+                class="primary-btn booking-btn"
+                onclick="openAuth('register')"
             >
-                Plan Your Journey →
-            </a>
-
+                Create Your Account →
+            </button>
 
             <div class="booking-features">
 
@@ -480,24 +455,12 @@
 
             </div>
 
-
             <div class="footer-links">
 
-                <a href="#destinations">
-                    Destinations
-                </a>
-
-                <a href="#trips">
-                    Trips
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#booking">
-                    Contact
-                </a>
+                <a href="#destinations">Destinations</a>
+                <a href="#trips">Trips</a>
+                <a href="#about">About</a>
+                <a href="#booking">Contact</a>
 
             </div>
 
@@ -517,6 +480,162 @@
         </div>
 
     </footer>
+
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="auth-modal">
+
+        <div class="auth-box">
+
+            <button
+                class="close-auth"
+                onclick="closeAuth()"
+            >
+                ×
+            </button>
+
+
+            <!-- REGISTER -->
+            <div id="registerForm">
+
+                <p class="small-title">
+                    JOIN WANDERLY
+                </p>
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p class="auth-subtitle">
+                    Save your travel plans and discover new journeys.
+                </p>
+
+
+                <form onsubmit="registerUser(event)">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Your name"
+                        required
+                    >
+
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p class="switch-auth">
+                    Already registered?
+                    <button onclick="showLogin()">
+                        Login
+                    </button>
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN -->
+            <div id="loginForm" class="hidden">
+
+                <p class="small-title">
+                    WELCOME BACK
+                </p>
+
+                <h2>
+                    Login to Wanderly
+                </h2>
+
+                <p class="auth-subtitle">
+                    Continue planning your next adventure.
+                </p>
+
+
+                <form onsubmit="loginUser(event)">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Your password"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <p class="switch-auth">
+                    New to Wanderly?
+                    <button onclick="showRegister()">
+                        Register
+                    </button>
+                </p>
+
+            </div>
+
+
+            <p id="authMessage" class="auth-message"></p>
+
+        </div>
+
+    </div>
 
 
     <script src="script.js"></script>
