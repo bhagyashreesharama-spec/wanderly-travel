@@ -1,12 +1,12 @@
-/* =========================
-   WANDERLY
-   LOGIN + REGISTER DEMO
-========================= */
+/* =========================================
+   WANDERLY 2.0
+   INTERACTIONS
+========================================= */
 
 
-/* =========================
+/* =========================================
    AUTH MODAL
-========================= */
+========================================= */
 
 function openAuth(type) {
 
@@ -14,16 +14,15 @@ function openAuth(type) {
 
     modal.classList.add("active");
 
+    document.body.classList.add("modal-open");
+
     if (type === "login") {
         showLogin();
     } else {
         showRegister();
     }
-
 }
 
-
-/* Close modal */
 
 function closeAuth() {
 
@@ -31,44 +30,47 @@ function closeAuth() {
 
     modal.classList.remove("active");
 
-    clearAuthMessage();
+    document.body.classList.remove("modal-open");
 
+    clearAuthMessage();
 }
 
 
-/* =========================
-   SHOW REGISTER
-========================= */
+/* =========================================
+   SWITCH AUTH FORMS
+========================================= */
 
 function showRegister() {
 
-    document.getElementById("registerForm").classList.remove("hidden");
+    document
+        .getElementById("registerForm")
+        .classList.remove("hidden");
 
-    document.getElementById("loginForm").classList.add("hidden");
+    document
+        .getElementById("loginForm")
+        .classList.add("hidden");
 
     clearAuthMessage();
-
 }
 
-
-/* =========================
-   SHOW LOGIN
-========================= */
 
 function showLogin() {
 
-    document.getElementById("registerForm").classList.add("hidden");
+    document
+        .getElementById("registerForm")
+        .classList.add("hidden");
 
-    document.getElementById("loginForm").classList.remove("hidden");
+    document
+        .getElementById("loginForm")
+        .classList.remove("hidden");
 
     clearAuthMessage();
-
 }
 
 
-/* =========================
-   REGISTER USER
-========================= */
+/* =========================================
+   REGISTER
+========================================= */
 
 function registerUser(event) {
 
@@ -84,10 +86,10 @@ function registerUser(event) {
         document.getElementById("registerPassword").value;
 
 
-    if (name === "" || email === "" || password === "") {
+    if (!name || !email || !password) {
 
         showAuthMessage(
-            "Please fill all the fields.",
+            "Please fill in all fields.",
             "error"
         );
 
@@ -98,7 +100,7 @@ function registerUser(event) {
     if (password.length < 6) {
 
         showAuthMessage(
-            "Password must be at least 6 characters.",
+            "Password must contain at least 6 characters.",
             "error"
         );
 
@@ -106,20 +108,20 @@ function registerUser(event) {
     }
 
 
-    /* Get existing users */
-
     let users =
-        JSON.parse(localStorage.getItem("wanderlyUsers")) || [];
+        JSON.parse(
+            localStorage.getItem("wanderlyUsers")
+        ) || [];
 
 
-    /* Check existing email */
-
-    const existingUser = users.find(
-        user => user.email.toLowerCase() === email.toLowerCase()
+    const emailExists = users.some(
+        user =>
+            user.email.toLowerCase() ===
+            email.toLowerCase()
     );
 
 
-    if (existingUser) {
+    if (emailExists) {
 
         showAuthMessage(
             "This email is already registered.",
@@ -130,9 +132,9 @@ function registerUser(event) {
     }
 
 
-    /* Create new user */
-
     const newUser = {
+
+        id: Date.now(),
 
         name: name,
 
@@ -146,41 +148,38 @@ function registerUser(event) {
     users.push(newUser);
 
 
-    /* Save user */
-
     localStorage.setItem(
         "wanderlyUsers",
         JSON.stringify(users)
     );
 
 
+    document
+        .getElementById("registerForm")
+        .querySelector("form")
+        .reset();
+
+
     showAuthMessage(
-        "Account created successfully! 🎉",
+        "Account created successfully! ✈️",
         "success"
     );
 
-
-    /* Clear form */
-
-    document.querySelector("#registerForm form").reset();
-
-
-    /* Open login after short delay */
 
     setTimeout(() => {
 
         showLogin();
 
-        document.getElementById("loginEmail").value = email;
+        document.getElementById("loginEmail").value =
+            email;
 
-    }, 1200);
-
+    }, 1000);
 }
 
 
-/* =========================
-   LOGIN USER
-========================= */
+/* =========================================
+   LOGIN
+========================================= */
 
 function loginUser(event) {
 
@@ -194,21 +193,24 @@ function loginUser(event) {
         document.getElementById("loginPassword").value;
 
 
-    let users =
-        JSON.parse(localStorage.getItem("wanderlyUsers")) || [];
+    const users =
+        JSON.parse(
+            localStorage.getItem("wanderlyUsers")
+        ) || [];
 
 
     const user = users.find(
-        user =>
-            user.email.toLowerCase() === email.toLowerCase() &&
-            user.password === password
+        item =>
+            item.email.toLowerCase() ===
+            email.toLowerCase() &&
+            item.password === password
     );
 
 
     if (!user) {
 
         showAuthMessage(
-            "Email or password is incorrect.",
+            "Incorrect email or password.",
             "error"
         );
 
@@ -216,12 +218,16 @@ function loginUser(event) {
     }
 
 
-    /* Save logged-in user */
-
     localStorage.setItem(
         "wanderlyLoggedInUser",
         JSON.stringify(user)
     );
+
+
+    document
+        .getElementById("loginForm")
+        .querySelector("form")
+        .reset();
 
 
     showAuthMessage(
@@ -230,23 +236,19 @@ function loginUser(event) {
     );
 
 
-    document.querySelector("#loginForm form").reset();
-
-
     setTimeout(() => {
 
         closeAuth();
 
         updateNavbar();
 
-    }, 1000);
-
+    }, 900);
 }
 
 
-/* =========================
+/* =========================================
    AUTH MESSAGE
-========================= */
+========================================= */
 
 function showAuthMessage(message, type) {
 
@@ -259,14 +261,12 @@ function showAuthMessage(message, type) {
 
     if (type === "success") {
 
-        messageBox.style.color = "#238636";
+        messageBox.style.color = "#27834b";
 
     } else {
 
-        messageBox.style.color = "#d93025";
-
+        messageBox.style.color = "#c93d2e";
     }
-
 }
 
 
@@ -275,32 +275,34 @@ function clearAuthMessage() {
     const messageBox =
         document.getElementById("authMessage");
 
+
     if (messageBox) {
 
         messageBox.textContent = "";
 
     }
-
 }
 
 
-/* =========================
-   UPDATE NAVBAR
-========================= */
+/* =========================================
+   NAVBAR USER STATE
+========================================= */
 
 function updateNavbar() {
 
     const user =
         JSON.parse(
-            localStorage.getItem("wanderlyLoggedInUser")
+            localStorage.getItem(
+                "wanderlyLoggedInUser"
+            )
         );
 
 
     const loginButton =
-        document.querySelector(".login-btn");
+        document.querySelector(".nav-login");
 
     const registerButton =
-        document.querySelector(".register-btn");
+        document.querySelector(".nav-register");
 
 
     if (!loginButton || !registerButton) {
@@ -310,18 +312,24 @@ function updateNavbar() {
 
     if (user) {
 
-        loginButton.textContent = `Hi, ${user.name.split(" ")[0]} 👋`;
+        const firstName =
+            user.name.split(" ")[0];
+
+
+        loginButton.textContent =
+            `Hi, ${firstName} 👋`;
+
 
         loginButton.onclick = function () {
 
-            alert(
-                `You're logged in as ${user.email}`
-            );
+            showUserProfile();
 
         };
 
 
-        registerButton.textContent = "Logout";
+        registerButton.textContent =
+            "Logout";
+
 
         registerButton.onclick = function () {
 
@@ -331,7 +339,9 @@ function updateNavbar() {
 
     } else {
 
-        loginButton.textContent = "Login";
+        loginButton.textContent =
+            "Login";
+
 
         loginButton.onclick = function () {
 
@@ -340,22 +350,51 @@ function updateNavbar() {
         };
 
 
-        registerButton.textContent = "Register";
+        registerButton.textContent =
+            "Register";
+
 
         registerButton.onclick = function () {
 
             openAuth("register");
 
         };
-
     }
-
 }
 
 
-/* =========================
+/* =========================================
+   USER PROFILE
+========================================= */
+
+function showUserProfile() {
+
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "wanderlyLoggedInUser"
+            )
+        );
+
+
+    if (!user) {
+        openAuth("login");
+        return;
+    }
+
+
+    alert(
+        `WANDERLY ACCOUNT\n\n` +
+        `Name: ${user.name}\n` +
+        `Email: ${user.email}\n\n` +
+        `You are logged in successfully. ✈️`
+    );
+}
+
+
+/* =========================================
    LOGOUT
-========================= */
+========================================= */
 
 function logoutUser() {
 
@@ -367,15 +406,16 @@ function logoutUser() {
     updateNavbar();
 
 
-    alert("You have been logged out.");
-
+    alert(
+        "You have been logged out. 👋"
+    );
 }
 
 
-/* =========================
+/* =========================================
    CLOSE MODAL
-   WHEN CLICKING OUTSIDE
-========================= */
+   OUTSIDE CLICK
+========================================= */
 
 document.addEventListener(
     "click",
@@ -393,32 +433,73 @@ document.addEventListener(
             closeAuth();
 
         }
-
     }
 );
 
 
-/* =========================
-   ESC KEY CLOSE
-========================= */
+/* =========================================
+   ESC KEY
+========================================= */
 
 document.addEventListener(
     "keydown",
     function (event) {
 
-        if (event.key === "Escape") {
+        if (
+            event.key === "Escape" &&
+            document
+                .getElementById("authModal")
+                .classList.contains("active")
+        ) {
 
             closeAuth();
 
         }
-
     }
 );
 
 
-/* =========================
+/* =========================================
+   SMOOTH NAVIGATION
+========================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+
+                if (
+                    targetId === "#" ||
+                    !document.querySelector(targetId)
+                ) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                document
+                    .querySelector(targetId)
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+            }
+        );
+
+    });
+
+
+/* =========================================
    PAGE LOAD
-========================= */
+========================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
