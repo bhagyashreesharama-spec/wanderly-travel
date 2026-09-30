@@ -5,462 +5,585 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wanderly | Explore More. Live More.</title>
+    <title>Wanderly — Travel Beyond Ordinary</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
+
     <header class="navbar">
 
         <a href="#home" class="logo">
-            <span>W</span>
-            WANDERLY
+            <span class="logo-mark">W</span>
+            <span>WANDERLY</span>
         </a>
 
-        <nav>
+
+        <nav class="nav-links">
+
             <a href="#home">Home</a>
+
             <a href="#destinations">Destinations</a>
+
             <a href="#trips">Trips</a>
+
             <a href="#about">About</a>
-            <a href="#booking">Contact</a>
+
         </nav>
 
-        <div class="auth-buttons">
-            <button class="login-btn" onclick="openAuth('login')">
+
+        <div class="nav-actions">
+
+            <button
+                class="nav-login"
+                onclick="openAuth('login')">
                 Login
             </button>
 
-            <button class="register-btn" onclick="openAuth('register')">
+            <button
+                class="nav-register"
+                onclick="openAuth('register')">
                 Register
             </button>
+
         </div>
 
     </header>
 
 
-    <!-- HERO -->
-    <section id="home" class="hero">
 
-        <div class="hero-overlay"></div>
+    <!-- ================= HERO ================= -->
 
-        <div class="hero-content">
+    <main>
 
-            <p class="eyebrow">
-                TRAVEL • DISCOVER • EXPERIENCE
-            </p>
+        <section id="home" class="hero">
 
-            <h1>
-                Explore More.<br>
-                <em>Live More.</em>
-            </h1>
+            <div class="hero-background"></div>
 
-            <p class="hero-text">
-                Discover beautiful places, unforgettable experiences
-                and journeys worth remembering.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#destinations" class="primary-btn">
-                    Explore Destinations →
-                </a>
-
-                <a href="#trips" class="secondary-btn">
-                    View Trips
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="scroll-down">
-            <span></span>
-            Scroll to explore
-        </div>
-
-    </section>
+            <div class="hero-overlay"></div>
 
 
-    <!-- DESTINATIONS -->
-    <section id="destinations" class="section destinations-section">
+            <div class="hero-content">
 
-        <div class="section-heading">
-
-            <p class="small-title">
-                DISCOVER INDIA
-            </p>
-
-            <h2>
-                Popular Destinations
-            </h2>
-
-            <p>
-                From peaceful mountains to golden beaches,
-                discover your next escape.
-            </p>
-
-        </div>
+                <p class="hero-label">
+                    TRAVEL • DISCOVER • REMEMBER
+                </p>
 
 
-        <div class="destination-grid">
+                <h1>
+                    Your next<br>
+                    <span>beautiful story</span>
+                    begins here.
+                </h1>
 
-            <article class="destination-card">
 
-                <img
-                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1000&q=85"
-                    alt="Mountains in Manali"
-                >
+                <p class="hero-description">
+                    Discover breathtaking places, meaningful experiences
+                    and journeys you'll remember long after you return home.
+                </p>
 
-                <div class="destination-info">
 
-                    <span>HIMACHAL PRADESH</span>
+                <div class="hero-buttons">
 
-                    <h3>Manali</h3>
+                    <a
+                        href="#destinations"
+                        class="btn btn-primary">
+                        Explore destinations
+                        <span>→</span>
+                    </a>
 
-                    <p>
-                        Mountains, nature & peaceful escapes.
-                    </p>
 
-                    <a href="#trips">
-                        Explore →
+                    <a
+                        href="#trips"
+                        class="btn btn-outline">
+                        View trips
                     </a>
 
                 </div>
 
-            </article>
-
-
-            <article class="destination-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=85"
-                    alt="Beach in Goa"
-                >
-
-                <div class="destination-info">
-
-                    <span>GOA</span>
-
-                    <h3>Goa</h3>
-
-                    <p>
-                        Beaches, sunsets & good vibes.
-                    </p>
-
-                    <a href="#trips">
-                        Explore →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- KASHMIR - FIXED IMAGE -->
-            <article class="destination-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1569852837213-00d97a707a83?auto=format&fit=crop&w=1000&q=85"
-                    alt="Dal Lake Srinagar Kashmir"
-                >
-
-                <div class="destination-info">
-
-                    <span>JAMMU & KASHMIR</span>
-
-                    <h3>Kashmir</h3>
-
-                    <p>
-                        Lakes, mountains & peaceful views.
-                    </p>
-
-                    <a href="#trips">
-                        Explore →
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- FEATURED TRIPS -->
-    <section id="trips" class="section trips-section">
-
-        <div class="section-heading">
-
-            <p class="small-title">
-                PLAN YOUR ESCAPE
-            </p>
-
-            <h2>
-                Featured Trips
-            </h2>
-
-            <p>
-                Thoughtfully planned journeys for unforgettable experiences.
-            </p>
-
-        </div>
-
-
-        <div class="trip-grid">
-
-            <article class="trip-card">
-
-                <div class="trip-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=85"
-                        alt="Manali mountain trip"
-                    >
-
-                    <span class="trip-tag">
-                        POPULAR
-                    </span>
-
-                </div>
-
-                <div class="trip-content">
-
-                    <h3>Manali Escape</h3>
-
-                    <p class="duration">
-                        3 Days / 2 Nights
-                    </p>
-
-                    <div class="trip-bottom">
-
-                        <strong>₹8,999</strong>
-
-                        <a href="#booking">
-                            View Trip →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="trip-card">
-
-                <div class="trip-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=85"
-                        alt="Goa beach trip"
-                    >
-
-                    <span class="trip-tag">
-                        BEACH
-                    </span>
-
-                </div>
-
-                <div class="trip-content">
-
-                    <h3>Goa Getaway</h3>
-
-                    <p class="duration">
-                        4 Days / 3 Nights
-                    </p>
-
-                    <div class="trip-bottom">
-
-                        <strong>₹10,999</strong>
-
-                        <a href="#booking">
-                            View Trip →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="trip-card">
-
-                <div class="trip-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1569852837213-00d97a707a83?auto=format&fit=crop&w=900&q=85"
-                        alt="Kashmir Dal Lake trip"
-                    >
-
-                    <span class="trip-tag">
-                        ADVENTURE
-                    </span>
-
-                </div>
-
-                <div class="trip-content">
-
-                    <h3>Kashmir Adventure</h3>
-
-                    <p class="duration">
-                        5 Days / 4 Nights
-                    </p>
-
-                    <div class="trip-bottom">
-
-                        <strong>₹14,999</strong>
-
-                        <a href="#booking">
-                            View Trip →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about" class="about-section">
-
-        <div class="about-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-                alt="Beautiful travel landscape"
-            >
-
-        </div>
-
-
-        <div class="about-content">
-
-            <p class="small-title">
-                ABOUT WANDERLY
-            </p>
-
-            <h2>
-                Your journey.<br>
-                <em>Our passion.</em>
-            </h2>
-
-            <p>
-                We believe every journey creates a story worth remembering.
-                Wanderly helps you discover beautiful places, unique
-                experiences and unforgettable adventures.
-            </p>
-
-            <div class="about-stats">
-
-                <div>
-                    <strong>25+</strong>
-                    <span>Destinations</span>
-                </div>
-
-                <div>
-                    <strong>100+</strong>
-                    <span>Travellers</span>
-                </div>
-
-                <div>
-                    <strong>4.9</strong>
-                    <span>Travel Rating</span>
-                </div>
-
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- BOOKING -->
-    <section id="booking" class="booking-section">
-
-        <div class="booking-content">
-
-            <p class="small-title">
-                YOUR NEXT ADVENTURE AWAITS
-            </p>
-
-            <h2>
-                Ready to explore?
-            </h2>
-
-            <p>
-                Let's plan your next unforgettable journey.
-            </p>
-
-            <button
-                class="primary-btn booking-btn"
-                onclick="openAuth('register')"
-            >
-                Create Your Account →
-            </button>
-
-            <div class="booking-features">
-
-                <div>
-                    <strong>25+</strong>
-                    <span>Destinations</span>
-                </div>
-
-                <div>
-                    <strong>100+</strong>
-                    <span>Travel Experiences</span>
-                </div>
-
-                <div>
-                    <strong>24/7</strong>
-                    <span>Travel Support</span>
-                </div>
-
+            <div class="hero-scroll">
+                <span></span>
+                Scroll to explore
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- FOOTER -->
-    <footer>
 
-        <div class="footer-main">
+        <!-- ================= DESTINATIONS ================= -->
 
-            <div>
+        <section
+            id="destinations"
+            class="section destinations">
 
-                <a href="#home" class="footer-logo">
-                    WANDERLY
-                </a>
+            <div class="section-intro">
 
-                <p>
-                    Explore more. Live more.<br>
-                    Travel with a story.
+                <div>
+
+                    <p class="section-label">
+                        WHERE WILL YOU GO?
+                    </p>
+
+                    <h2>
+                        Places worth<br>
+                        <span>getting lost in.</span>
+                    </h2>
+
+                </div>
+
+
+                <p class="section-description">
+                    From snowy mountains to quiet lakes and golden beaches,
+                    find a place that feels like yours.
                 </p>
 
             </div>
 
+
+            <div class="destination-grid">
+
+
+                <!-- MANALI -->
+
+                <article class="destination-card large-card">
+
+                    <div class="destination-image manali-image">
+
+                        <div class="destination-number">
+                            01
+                        </div>
+
+                    </div>
+
+
+                    <div class="destination-details">
+
+                        <p>
+                            HIMACHAL PRADESH
+                        </p>
+
+                        <h3>
+                            Manali
+                        </h3>
+
+                        <span>
+                            Mountains • Snow • Nature
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- GOA -->
+
+                <article class="destination-card">
+
+                    <div class="destination-image goa-image">
+
+                        <div class="destination-number">
+                            02
+                        </div>
+
+                    </div>
+
+
+                    <div class="destination-details">
+
+                        <p>
+                            GOA
+                        </p>
+
+                        <h3>
+                            Goa
+                        </h3>
+
+                        <span>
+                            Beaches • Sunsets • Freedom
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- KASHMIR -->
+
+                <article class="destination-card">
+
+                    <div class="destination-image kashmir-image">
+
+                        <div class="destination-number">
+                            03
+                        </div>
+
+                    </div>
+
+
+                    <div class="destination-details">
+
+                        <p>
+                            JAMMU & KASHMIR
+                        </p>
+
+                        <h3>
+                            Kashmir
+                        </h3>
+
+                        <span>
+                            Lakes • Mountains • Peace
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TRIPS ================= -->
+
+        <section
+            id="trips"
+            class="section trips">
+
+            <div class="center-heading">
+
+                <p class="section-label">
+                    PLAN YOUR ESCAPE
+                </p>
+
+                <h2>
+                    Journeys made<br>
+                    <span>for memories.</span>
+                </h2>
+
+                <p>
+                    Simple, thoughtfully planned trips for people
+                    who want to experience more.
+                </p>
+
+            </div>
+
+
+            <div class="trip-grid">
+
+
+                <!-- TRIP 1 -->
+
+                <article class="trip-card">
+
+                    <div class="trip-top">
+
+                        <span class="trip-category">
+                            MOUNTAINS
+                        </span>
+
+                        <span class="trip-price">
+                            ₹8,999
+                        </span>
+
+                    </div>
+
+
+                    <div class="trip-icon">
+                        ⛰
+                    </div>
+
+
+                    <h3>
+                        Manali Escape
+                    </h3>
+
+
+                    <p>
+                        Snowy peaks, peaceful valleys
+                        and mountain adventures.
+                    </p>
+
+
+                    <div class="trip-info">
+
+                        <span>
+                            3 Days / 2 Nights
+                        </span>
+
+                        <a href="#booking">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TRIP 2 -->
+
+                <article class="trip-card featured-trip">
+
+                    <div class="trip-top">
+
+                        <span class="trip-category">
+                            BEACH
+                        </span>
+
+                        <span class="trip-price">
+                            ₹10,999
+                        </span>
+
+                    </div>
+
+
+                    <div class="trip-icon">
+                        🌊
+                    </div>
+
+
+                    <h3>
+                        Goa Getaway
+                    </h3>
+
+
+                    <p>
+                        Warm sunsets, ocean air
+                        and unforgettable evenings.
+                    </p>
+
+
+                    <div class="trip-info">
+
+                        <span>
+                            4 Days / 3 Nights
+                        </span>
+
+                        <a href="#booking">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TRIP 3 -->
+
+                <article class="trip-card">
+
+                    <div class="trip-top">
+
+                        <span class="trip-category">
+                            ADVENTURE
+                        </span>
+
+                        <span class="trip-price">
+                            ₹14,999
+                        </span>
+
+                    </div>
+
+
+                    <div class="trip-icon">
+                        🏔
+                    </div>
+
+
+                    <h3>
+                        Kashmir Adventure
+                    </h3>
+
+
+                    <p>
+                        Dal Lake, mountain views
+                        and peaceful mornings.
+                    </p>
+
+
+                    <div class="trip-info">
+
+                        <span>
+                            5 Days / 4 Nights
+                        </span>
+
+                        <a href="#booking">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            id="about"
+            class="about-section">
+
+            <div class="about-content">
+
+                <p class="section-label">
+                    ABOUT WANDERLY
+                </p>
+
+
+                <h2>
+                    Travel isn't just<br>
+                    about the <span>place.</span>
+                </h2>
+
+
+                <p class="about-text">
+                    It's about the people you meet, the stories you collect,
+                    the unexpected moments and the version of yourself
+                    you discover along the way.
+                </p>
+
+
+                <div class="stats">
+
+                    <div>
+                        <strong>25+</strong>
+                        <span>Destinations</span>
+                    </div>
+
+
+                    <div>
+                        <strong>100+</strong>
+                        <span>Travel experiences</span>
+                    </div>
+
+
+                    <div>
+                        <strong>4.9</strong>
+                        <span>Travel rating</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-visual">
+
+                <div class="about-circle">
+
+                    <span>
+                        WANDER<br>
+                        MORE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BOOKING ================= -->
+
+        <section
+            id="booking"
+            class="booking-section">
+
+            <div>
+
+                <p class="section-label">
+                    YOUR NEXT ADVENTURE
+                </p>
+
+
+                <h2>
+                    Where will your<br>
+                    story take you?
+                </h2>
+
+
+                <p>
+                    Create your Wanderly account and start
+                    exploring your next journey.
+                </p>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openAuth('register')">
+
+                    Create your account
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <a
+                    href="#home"
+                    class="footer-logo">
+                    WANDERLY
+                </a>
+
+                <p>
+                    Travel beyond ordinary.
+                </p>
+
+            </div>
+
+
             <div class="footer-links">
 
-                <a href="#destinations">Destinations</a>
-                <a href="#trips">Trips</a>
-                <a href="#about">About</a>
-                <a href="#booking">Contact</a>
+                <a href="#home">Home</a>
+
+                <a href="#destinations">
+                    Destinations
+                </a>
+
+                <a href="#trips">
+                    Trips
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
 
             </div>
 
@@ -470,11 +593,11 @@
         <div class="footer-bottom">
 
             <span>
-                © 2026 Wanderly. Demo website.
+                © 2026 Wanderly
             </span>
 
             <span>
-                Made with curiosity & creativity.
+                Travel beyond ordinary.
             </span>
 
         </div>
@@ -482,44 +605,53 @@
     </footer>
 
 
-    <!-- AUTH MODAL -->
-    <div id="authModal" class="auth-modal">
+
+    <!-- ================= AUTH MODAL ================= -->
+
+    <div
+        id="authModal"
+        class="auth-modal">
 
         <div class="auth-box">
 
+
             <button
-                class="close-auth"
-                onclick="closeAuth()"
-            >
+                class="auth-close"
+                onclick="closeAuth()">
                 ×
             </button>
 
 
             <!-- REGISTER -->
-            <div id="registerForm">
 
-                <p class="small-title">
-                    JOIN WANDERLY
+            <div
+                id="registerForm"
+                class="auth-form">
+
+                <p class="section-label">
+                    WELCOME TO WANDERLY
                 </p>
 
                 <h2>
-                    Create your account
+                    Create your account.
                 </h2>
 
-                <p class="auth-subtitle">
-                    Save your travel plans and discover new journeys.
+                <p>
+                    Start planning your next adventure.
                 </p>
 
 
-                <form onsubmit="registerUser(event)">
+                <form
+                    onsubmit="registerUser(event)">
+
 
                     <label>
-                        Full Name
+                        Full name
                     </label>
 
                     <input
-                        type="text"
                         id="registerName"
+                        type="text"
                         placeholder="Your name"
                         required
                     >
@@ -530,8 +662,8 @@
                     </label>
 
                     <input
-                        type="email"
                         id="registerEmail"
+                        type="email"
                         placeholder="you@example.com"
                         required
                     >
@@ -542,58 +674,69 @@
                     </label>
 
                     <input
-                        type="password"
                         id="registerPassword"
-                        placeholder="Create a password"
+                        type="password"
+                        placeholder="Minimum 6 characters"
+                        minlength="6"
                         required
                     >
 
 
                     <button
                         type="submit"
-                        class="auth-submit"
-                    >
-                        Create Account
+                        class="auth-submit">
+
+                        Create account
+
                     </button>
 
                 </form>
 
 
-                <p class="switch-auth">
-                    Already registered?
+                <p class="auth-switch">
+
+                    Already have an account?
+
                     <button onclick="showLogin()">
                         Login
                     </button>
+
                 </p>
 
             </div>
 
 
-            <!-- LOGIN -->
-            <div id="loginForm" class="hidden">
 
-                <p class="small-title">
+            <!-- LOGIN -->
+
+            <div
+                id="loginForm"
+                class="auth-form hidden">
+
+                <p class="section-label">
                     WELCOME BACK
                 </p>
 
                 <h2>
-                    Login to Wanderly
+                    Good to see you.
                 </h2>
 
-                <p class="auth-subtitle">
-                    Continue planning your next adventure.
+                <p>
+                    Continue your travel journey.
                 </p>
 
 
-                <form onsubmit="loginUser(event)">
+                <form
+                    onsubmit="loginUser(event)">
+
 
                     <label>
                         Email
                     </label>
 
                     <input
-                        type="email"
                         id="loginEmail"
+                        type="email"
                         placeholder="you@example.com"
                         required
                     >
@@ -604,8 +747,8 @@
                     </label>
 
                     <input
-                        type="password"
                         id="loginPassword"
+                        type="password"
                         placeholder="Your password"
                         required
                     >
@@ -613,29 +756,37 @@
 
                     <button
                         type="submit"
-                        class="auth-submit"
-                    >
+                        class="auth-submit">
+
                         Login
+
                     </button>
 
                 </form>
 
 
-                <p class="switch-auth">
+                <p class="auth-switch">
+
                     New to Wanderly?
+
                     <button onclick="showRegister()">
-                        Register
+                        Create account
                     </button>
+
                 </p>
 
             </div>
 
 
-            <p id="authMessage" class="auth-message"></p>
+            <div
+                id="authMessage"
+                class="auth-message">
+            </div>
 
         </div>
 
     </div>
+
 
 
     <script src="script.js"></script>
